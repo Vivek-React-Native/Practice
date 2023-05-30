@@ -131,6 +131,16 @@ android {
         }
     }
 
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def app_name = 'Practice'
+            def flavor = variant.name
+            def versionName = variant.versionName
+            def date = new Date().format('ddMMyyyy')
+            outputFileName = "${app_name}_${flavor}_${versionName}_${date}.apk"
+        }
+    }
+
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->

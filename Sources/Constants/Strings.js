@@ -6,7 +6,7 @@ const Strings = {
   Reactiive_Episode_1: 'Reactiive Episode 1',
 
   CatalinMiron: 'Catalin Miron',
-  CatalinMiron_Episode1: 'Catalin Miron Episode 1',
+  ParallaxCarousel: 'Parallax Carousel',
 };
 
 export default Strings;

@@ -1,23 +1,23 @@
 import React from 'react';
 import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { RNStyles, RNText } from '../../Common';
-import { NavigationRoutes, Strings } from '../../Constants';
 import { createStackNavigator } from '@react-navigation/stack';
-import Episode_1 from './CatalinMiron_Episode_1';
 import { Colors, hp, wp } from '../../Theme';
+import { NavigationRoutes, Strings } from '../../Constants';
+import ParallaxCarousel from './ParallaxCarousel';
 
 const Stack = createStackNavigator();
 
 const CatalinMiron = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: true }}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
         name={'Catalin Miron Reanimated'}
         component={InnerScreens}
       />
       <Stack.Screen
-        name={NavigationRoutes.CatalinMiron_Episode1}
-        component={Episode_1}
+        name={NavigationRoutes.ParallaxCarousel}
+        component={ParallaxCarousel}
       />
     </Stack.Navigator>
   );
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
 
 const DATA = [
   {
-    title: Strings.CatalinMiron_Episode1,
-    navigate: NavigationRoutes.CatalinMiron_Episode1,
+    title: Strings.ParallaxCarousel,
+    navigate: NavigationRoutes.ParallaxCarousel,
   },
 ];
 

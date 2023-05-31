@@ -1,45 +1,48 @@
 import React from 'react';
-import {
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Colors, FontFamily, FontSize, hp, isIOS, wp } from '../Theme';
 import RNText from './RNText';
 import RNStyles from './RNStyles';
+import { Images } from '../Constants';
+import { useNavigation } from '@react-navigation/native';
 
 const RNHeader = ({
   title,
   onLeftPress,
-  LeftIcon,
+  LeftIcon = Images.LeftArrow,
   onRightPress,
   RightIcon,
   containerStyle,
   titleStyle,
 }) => {
+  const navigation = useNavigation();
   return (
     <View style={[styles.Container, containerStyle]}>
-      <TouchableOpacity onPress={onLeftPress} style={styles.Left}>
-        {LeftIcon && (
+      {LeftIcon ? (
+        <TouchableOpacity
+          onPress={() => (onLeftPress ? onLeftPress?.() : navigation.goBack())}
+          style={styles.Left}>
           <Image
             source={LeftIcon}
             resizeMode={'contain'}
             style={RNStyles.image90}
           />
-        )}
-      </TouchableOpacity>
+        </TouchableOpacity>
+      ) : (
+        <View style={styles.Left} />
+      )}
       <RNText style={[styles.title, titleStyle]}>{title}</RNText>
-      <TouchableOpacity onPress={onRightPress} style={styles.Right}>
-        {RightIcon && (
+      {RightIcon ? (
+        <TouchableOpacity onPress={onRightPress} style={styles.Right}>
           <Image
             source={RightIcon}
             resizeMode={'contain'}
             style={RNStyles.image90}
           />
-        )}
-      </TouchableOpacity>
+        </TouchableOpacity>
+      ) : (
+        <View style={styles.Right} />
+      )}
     </View>
   );
 };

@@ -38,7 +38,7 @@ const Routes = () => {
 };
 
 const screenOptions = {
-  // headerShown: false,
+  headerShown: false,
   ...TransitionPresets.SlideFromRightIOS,
   headerTitleAlign: 'center',
 };

@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { RNStyles, RNText } from '../../Common';
+import { RNHeader, RNStyles, RNText } from '../../Common';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Colors, hp, wp } from '../../Theme';
 import { NavigationRoutes, Strings } from '../../Constants';
 import ParallaxCarousel from './ParallaxCarousel';
+import CatalinMiron_Carousel_1 from './CatalinMiron_Carousel_1';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,10 @@ const CatalinMiron = () => {
       <Stack.Screen
         name={NavigationRoutes.ParallaxCarousel}
         component={ParallaxCarousel}
+      />
+      <Stack.Screen
+        name={NavigationRoutes.CatalinMiron_Carousel_1}
+        component={CatalinMiron_Carousel_1}
       />
     </Stack.Navigator>
   );
@@ -36,6 +41,7 @@ const InnerScreens = ({ navigation }) => {
 
   return (
     <View style={RNStyles.container}>
+      <RNHeader title={Strings.CatalinMiron} />
       <FlatList
         data={DATA}
         contentContainerStyle={styles.contentContainerStyle}
@@ -68,6 +74,10 @@ const DATA = [
   {
     title: Strings.ParallaxCarousel,
     navigate: NavigationRoutes.ParallaxCarousel,
+  },
+  {
+    title: Strings.CatalinMiron_Carousel_1,
+    navigate: NavigationRoutes.CatalinMiron_Carousel_1,
   },
 ];
 

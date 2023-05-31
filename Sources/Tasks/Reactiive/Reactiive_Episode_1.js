@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { RNButton, RNStyles } from '../../Common';
+import { RNButton, RNHeader, RNStyles } from '../../Common';
 import { Colors, hp } from '../../Theme';
 import ReAnimated, {
   useAnimatedStyle,
@@ -8,6 +8,7 @@ import ReAnimated, {
   withRepeat,
   withSpring,
 } from 'react-native-reanimated';
+import { Strings } from '../../Constants';
 
 const SIZE = 100;
 
@@ -39,16 +40,19 @@ const Reactiive_Episode_1 = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <ReAnimated.View style={[styles.Box, BoxStyle]} />
-      <RNButton title={'Start Animation'} onPress={onStartAnimation} />
-      <RNButton title={'End Animation'} onPress={onEndAnimation} />
+    <View style={RNStyles.container}>
+      <RNHeader title={Strings.Reactiive_Episode_1} />
+      <View style={styles.content}>
+        <ReAnimated.View style={[styles.Box, BoxStyle]} />
+        <RNButton title={'Start Animation'} onPress={onStartAnimation} />
+        <RNButton title={'End Animation'} onPress={onEndAnimation} />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  content: {
     ...RNStyles.container,
     ...RNStyles.center,
   },

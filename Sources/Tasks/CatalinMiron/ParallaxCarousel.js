@@ -1,5 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { Images } from '../../Constants';
 import { RNButton, RNStyles, RNText } from '../../Common';
 import { Colors, FontFamily, FontSize, hp, wp } from '../../Theme';
@@ -8,16 +14,15 @@ import Reanimated, {
   useSharedValue,
   useAnimatedStyle,
   interpolate,
-  StretchInY,
 } from 'react-native-reanimated';
 
 const totalWidth = wp(100);
 const imageWidth = wp(80);
 const imageHeight = hp(50);
 
-const ParallaxCarousel = () => {
+const ParallaxCarousel = ({ navigation }) => {
   const translateX = useSharedValue(0);
-  const [State, setState] = useState({ IsCardStyle: false });
+  const [State, setState] = useState({ IsCardStyle: true });
 
   const IMAGES = [
     Images.Image_0,
@@ -55,12 +60,23 @@ const ParallaxCarousel = () => {
   });
 
   return (
-    <View style={styles.container}>
-      <RNButton
-        title={State.IsCardStyle ? 'Full Screen Style' : 'Card Style'}
-        onPress={() => setState(p => ({ ...p, IsCardStyle: !p.IsCardStyle }))}
-      />
-
+    <SafeAreaView style={styles.container}>
+      <View style={RNStyles.flexRowBetween}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={styles.BackIcon}>
+          <Image
+            source={Images.LeftArrow}
+            resizeMode={'contain'}
+            style={RNStyles.icon}
+          />
+        </TouchableOpacity>
+        <RNButton
+          title={State.IsCardStyle ? 'Full Screen Style' : 'Card Style'}
+          style={{ flex: 1 }}
+          onPress={() => setState(p => ({ ...p, IsCardStyle: !p.IsCardStyle }))}
+        />
+      </View>
       <Reanimated.FlatList
         data={FullScreenImages}
         keyExtractor={(v, i) => String(i)}
@@ -80,7 +96,7 @@ const ParallaxCarousel = () => {
           )
         }
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -143,6 +159,15 @@ const styles = StyleSheet.create({
   overlay: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: Colors.Black + '30',
+  },
+  BackIcon: {
+    ...RNStyles.center,
+    ...RNStyles.shadow,
+    backgroundColor: Colors.White,
+    borderRadius: 100,
+    width: wp(9),
+    height: wp(9),
+    marginHorizontal: wp(4),
   },
 });
 

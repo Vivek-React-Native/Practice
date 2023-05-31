@@ -7,6 +7,7 @@ const NavigationRoutes = {
 
   CatalinMiron: 'Catalin Miron',
   ParallaxCarousel: 'Parallax Carousel',
+  CatalinMiron_Carousel_1: 'Catalin MironCarousel 1',
 };
 
 export default NavigationRoutes;

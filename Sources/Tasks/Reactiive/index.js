@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { RNStyles, RNText } from '../../Common';
+import { RNHeader, RNStyles, RNText } from '../../Common';
 import { NavigationRoutes, Strings } from '../../Constants';
 import { createStackNavigator } from '@react-navigation/stack';
 import Reactiive_Episode_1 from './Reactiive_Episode_1';
@@ -33,6 +33,7 @@ const InnerScreens = ({ navigation }) => {
 
   return (
     <View style={RNStyles.container}>
+      <RNHeader title={Strings.Reactiive} />
       <FlatList
         data={DATA}
         contentContainerStyle={styles.contentContainerStyle}

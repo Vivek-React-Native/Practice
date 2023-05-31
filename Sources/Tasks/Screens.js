@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { RNStyles, RNText } from '../Common';
+import { RNHeader, RNStyles, RNText } from '../Common';
 import { Colors, hp, wp } from '../Theme';
 import { NavigationRoutes, Strings } from '../Constants';
 
@@ -32,6 +32,7 @@ const Screens = ({ navigation }) => {
 
   return (
     <View style={RNStyles.container}>
+      <RNHeader title={Strings.TaskList} LeftIcon={false} />
       <FlatList
         data={AllScreens}
         contentContainerStyle={styles.contentContainerStyle}

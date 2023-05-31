@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { RNStyles } from '../../Common';
+import { RNHeader, RNStyles } from '../../Common';
 import { Colors, hp, wp } from '../../Theme';
-import { Images } from '../../Constants';
+import { Images, Strings } from '../../Constants';
 
 const ImageWidth = wp(90);
 const ImageHeight = hp(35);
@@ -39,6 +39,7 @@ const HorizontalImageSlider = () => {
 
   return (
     <View style={styles.container}>
+      <RNHeader title={Strings.HorizontalImageSlider} />
       <View style={styles.content}>
         <FlatList
           ref={FlatListRef}

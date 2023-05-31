@@ -29,7 +29,7 @@ const Reactiive_Episode_1 = () => {
   });
 
   const onStartAnimation = () => {
-    progress.value = withRepeat(withSpring(0.5), -1, true);
+    progress.value = withRepeat(withSpring(0.2), -1, true);
     scale.value = withRepeat(withSpring(1), -1, true);
   };
 

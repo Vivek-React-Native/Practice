@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { RNStyles, RNText } from '../../Common';
 import { createStackNavigator } from '@react-navigation/stack';

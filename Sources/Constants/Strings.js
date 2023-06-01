@@ -1,6 +1,8 @@
 const Strings = {
   TaskList: 'Tasks',
   HorizontalImageSlider: 'Horizontal Image Slider',
+  ReRenderIssue: 'Re-Render issue in React Native.',
+  GIF: 'GIF',
 
   Reactiive: 'Reactiive',
   Reactiive_Episode_1: 'Reactiive Episode 1',

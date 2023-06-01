@@ -1,4 +1,5 @@
 #import "AppDelegate.h"
+#import <Firebase.h>
 #import "RNSplashScreen.h"
 #import <React/RCTBundleURLProvider.h>
 
@@ -15,8 +16,8 @@
   // return [super application:application didFinishLaunchingWithOptions:launchOptions];
 
   bool didFinish=[super application:application didFinishLaunchingWithOptions:launchOptions];
-  
   [RNSplashScreen show];  // here
+  [FIRApp configure];
   return didFinish;
 }
 

@@ -1,6 +1,8 @@
 const NavigationRoutes = {
   Screens: 'Screens',
   HorizontalImageSlider: 'Horizontal Image Slider',
+  ReRenderIssue: 'ReRenderIssue',
+  GIF: 'GIF',
 
   Reactiive: 'Reactiive',
   Reactiive_Episode_1: 'Reactiive Episode 1',

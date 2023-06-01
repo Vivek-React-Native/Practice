@@ -10,6 +10,8 @@ import {
   HorizontalImageSlider,
   Reactiive,
   CatalinMiron,
+  ReRender,
+  GIF,
 } from './Tasks';
 
 const Stack = createStackNavigator();
@@ -32,6 +34,11 @@ const Routes = () => {
           name={NavigationRoutes.CatalinMiron}
           component={CatalinMiron}
         />
+        <Stack.Screen
+          name={NavigationRoutes.ReRenderIssue}
+          component={ReRender}
+        />
+        <Stack.Screen name={NavigationRoutes.GIF} component={GIF} />
       </Stack.Navigator>
     </NavigationContainer>
   );

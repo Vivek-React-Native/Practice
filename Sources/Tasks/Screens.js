@@ -18,6 +18,14 @@ const Screens = ({ navigation }) => {
       title: Strings.CatalinMiron,
       navigate: NavigationRoutes.CatalinMiron,
     },
+    {
+      title: Strings.ReRenderIssue,
+      navigate: NavigationRoutes.ReRenderIssue,
+    },
+    {
+      title: Strings.GIF,
+      navigate: NavigationRoutes.GIF,
+    },
   ];
 
   const RenderScreens = ({ item, index }) => {

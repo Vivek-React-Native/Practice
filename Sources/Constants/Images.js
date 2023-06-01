@@ -1,6 +1,8 @@
 const Path = '../Assets/Images/';
+const GIF_Path = '../Assets/GIFs/';
 const png = '.png';
 const jpg = '.jpg';
+const gif = '.gif';
 
 const Images = {
   AppLogo: require(Path + 'AppLogo' + png),
@@ -14,6 +16,13 @@ const Images = {
   Cat_1: require(Path + 'Cat_1' + jpg),
   Dog_1: require(Path + 'Dog_1' + jpg),
   Swan_1: require(Path + 'Swan_1' + jpg),
+
+  // GIF
+  Butterfly: require(GIF_Path + 'Butterfly' + gif),
+  ColorLines: require(GIF_Path + 'ColorLines' + gif),
+  GirlHairs: require(GIF_Path + 'GirlHairs' + gif),
+  Houses: require(GIF_Path + 'Houses' + gif),
+  Sun: require(GIF_Path + 'Sun' + gif),
 };
 
 export default Images;

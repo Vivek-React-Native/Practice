@@ -12,6 +12,7 @@ import {
   CatalinMiron,
   ReRender,
   GIF,
+  Clock,
 } from './Tasks';
 
 const Stack = createStackNavigator();
@@ -39,6 +40,7 @@ const Routes = () => {
           component={ReRender}
         />
         <Stack.Screen name={NavigationRoutes.GIF} component={GIF} />
+        <Stack.Screen name={NavigationRoutes.Clock} component={Clock} />
       </Stack.Navigator>
     </NavigationContainer>
   );

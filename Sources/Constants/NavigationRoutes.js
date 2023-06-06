@@ -3,6 +3,7 @@ const NavigationRoutes = {
   HorizontalImageSlider: 'Horizontal Image Slider',
   ReRenderIssue: 'ReRenderIssue',
   GIF: 'GIF',
+  Clock: 'Clock',
 
   Reactiive: 'Reactiive',
   Reactiive_Episode_1: 'Reactiive Episode 1',

@@ -3,6 +3,7 @@ const Strings = {
   HorizontalImageSlider: 'Horizontal Image Slider',
   ReRenderIssue: 'Re-Render issue in React Native.',
   GIF: 'GIF',
+  Clock: 'Clock',
 
   Reactiive: 'Reactiive',
   Reactiive_Episode_1: 'Reactiive Episode 1',

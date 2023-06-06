@@ -8,6 +8,7 @@ const Images = {
   AppLogo: require(Path + 'AppLogo' + png),
   AppSplashScreen: require(Path + 'AppSplashScreen' + png),
   LeftArrow: require(Path + 'LeftArrow' + png),
+  Clock: require(Path + 'Clock' + png),
   Image_0: require(Path + 'Image_0' + jpg),
   Image_1: require(Path + 'Image_1' + jpg),
   Image_2: require(Path + 'Image_2' + jpg),

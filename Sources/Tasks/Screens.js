@@ -26,6 +26,10 @@ const Screens = ({ navigation }) => {
       title: Strings.GIF,
       navigate: NavigationRoutes.GIF,
     },
+    {
+      title: Strings.Clock,
+      navigate: NavigationRoutes.Clock,
+    },
   ];
 
   const RenderScreens = ({ item, index }) => {

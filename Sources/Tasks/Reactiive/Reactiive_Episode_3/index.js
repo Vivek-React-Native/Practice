@@ -5,7 +5,7 @@ import Animated, {
   useSharedValue,
 } from 'react-native-reanimated';
 import { Colors } from '../../../Theme';
-import RNR_3_Page from './RNR_3_Page';
+import Page from './Page';
 import { RNHeader, RNStyles } from '../../../Common';
 import { Strings } from '../../../Constants';
 
@@ -34,7 +34,7 @@ const Reactiive_Episode_3 = () => {
         horizontal={true}
         pagingEnabled={true}>
         {WORDS.map((v, i) => (
-          <RNR_3_Page key={i} item={v} index={i} TranslateX={TranslateX} />
+          <Page key={i} item={v} index={i} TranslateX={TranslateX} />
         ))}
       </Animated.ScrollView>
     </View>

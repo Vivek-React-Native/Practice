@@ -10,7 +10,7 @@ import Animated, {
 const TotalWidth = wp(100);
 const SIZE = wp(70);
 
-const RNR_3_Page = ({ item, index, TranslateX }) => {
+const Page = ({ item, index, TranslateX }) => {
   const InputRange = [
     (index - 1) * TotalWidth,
     index * TotalWidth,
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RNR_3_Page;
+export default Page;

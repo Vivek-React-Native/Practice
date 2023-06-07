@@ -3,8 +3,11 @@ import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { RNHeader, RNStyles, RNText } from '../../Common';
 import { NavigationRoutes, Strings } from '../../Constants';
 import { createStackNavigator } from '@react-navigation/stack';
-import Reactiive_Episode_1 from './Reactiive_Episode_1';
 import { Colors, hp, wp } from '../../Theme';
+import Reactiive_Episode_1 from './Reactiive_Episode_1';
+import Reactiive_Episode_2 from './Reactiive_Episode_2';
+import Reactiive_Episode_3 from './Reactiive_Episode_3';
+import Reactiive_Episode_4 from './Reactiive_Episode_4';
 
 const Stack = createStackNavigator();
 
@@ -15,6 +18,18 @@ const Reactiive = () => {
       <Stack.Screen
         name={NavigationRoutes.Reactiive_Episode_1}
         component={Reactiive_Episode_1}
+      />
+      <Stack.Screen
+        name={NavigationRoutes.Reactiive_Episode_2}
+        component={Reactiive_Episode_2}
+      />
+      <Stack.Screen
+        name={NavigationRoutes.Reactiive_Episode_3}
+        component={Reactiive_Episode_3}
+      />
+      <Stack.Screen
+        name={NavigationRoutes.Reactiive_Episode_4}
+        component={Reactiive_Episode_4}
       />
     </Stack.Navigator>
   );
@@ -66,6 +81,18 @@ const DATA = [
   {
     title: Strings.Reactiive_Episode_1,
     navigate: NavigationRoutes.Reactiive_Episode_1,
+  },
+  {
+    title: Strings.Reactiive_Episode_2,
+    navigate: NavigationRoutes.Reactiive_Episode_2,
+  },
+  {
+    title: Strings.Reactiive_Episode_3,
+    navigate: NavigationRoutes.Reactiive_Episode_3,
+  },
+  {
+    title: Strings.Reactiive_Episode_4,
+    navigate: NavigationRoutes.Reactiive_Episode_4,
   },
 ];
 

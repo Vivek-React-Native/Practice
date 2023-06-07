@@ -4,6 +4,10 @@ const Strings = {
   ReRenderIssue: 'Re-Render issue in React Native.',
   GIF: 'GIF',
   Clock: 'Clock',
+  Cat: 'Pussy Cat',
+  Dog: 'Dog',
+  Lion: 'Lion King',
+  Swan: 'Swan',
 
   Reactiive: 'Reactiive',
   Reactiive_Episode_1: 'Reactiive Episode 1',
@@ -14,6 +18,7 @@ const Strings = {
   CatalinMiron: 'Catalin Miron',
   ParallaxCarousel: 'Parallax Carousel',
   CatalinMiron_Carousel_1: 'Catalin MironCarousel 1',
+  AnimatedTabs: 'Animated Tabs',
 };
 
 export default Strings;

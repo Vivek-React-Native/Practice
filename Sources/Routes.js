@@ -48,8 +48,8 @@ const Routes = () => {
 
 const screenOptions = {
   headerShown: false,
-  ...TransitionPresets.SlideFromRightIOS,
   headerTitleAlign: 'center',
+  ...TransitionPresets.SlideFromRightIOS,
 };
 
 export default Routes;

@@ -1,17 +1,21 @@
 import React from 'react';
 import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { RNHeader, RNStyles, RNText } from '../../Common';
-import { createStackNavigator } from '@react-navigation/stack';
+import {
+  TransitionPresets,
+  createStackNavigator,
+} from '@react-navigation/stack';
 import { Colors, hp, wp } from '../../Theme';
 import { NavigationRoutes, Strings } from '../../Constants';
 import ParallaxCarousel from './ParallaxCarousel';
 import CatalinMiron_Carousel_1 from './CatalinMiron_Carousel_1';
+import AnimatedTabs from './AnimatedTabs';
 
 const Stack = createStackNavigator();
 
 const CatalinMiron = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen
         name={'Catalin Miron Reanimated'}
         component={InnerScreens}
@@ -23,6 +27,10 @@ const CatalinMiron = () => {
       <Stack.Screen
         name={NavigationRoutes.CatalinMiron_Carousel_1}
         component={CatalinMiron_Carousel_1}
+      />
+      <Stack.Screen
+        name={NavigationRoutes.AnimatedTabs}
+        component={AnimatedTabs}
       />
     </Stack.Navigator>
   );
@@ -69,7 +77,11 @@ const styles = StyleSheet.create({
     borderRadius: wp(2),
   },
 });
-
+const screenOptions = {
+  headerShown: false,
+  headerTitleAlign: 'center',
+  ...TransitionPresets.SlideFromRightIOS,
+};
 const DATA = [
   {
     title: Strings.ParallaxCarousel,
@@ -78,6 +90,10 @@ const DATA = [
   {
     title: Strings.CatalinMiron_Carousel_1,
     navigate: NavigationRoutes.CatalinMiron_Carousel_1,
+  },
+  {
+    title: Strings.AnimatedTabs,
+    navigate: NavigationRoutes.AnimatedTabs,
   },
 ];
 

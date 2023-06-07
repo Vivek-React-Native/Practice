@@ -2,7 +2,10 @@ import React from 'react';
 import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { RNHeader, RNStyles, RNText } from '../../Common';
 import { NavigationRoutes, Strings } from '../../Constants';
-import { createStackNavigator } from '@react-navigation/stack';
+import {
+  TransitionPresets,
+  createStackNavigator,
+} from '@react-navigation/stack';
 import { Colors, hp, wp } from '../../Theme';
 import Reactiive_Episode_1 from './Reactiive_Episode_1';
 import Reactiive_Episode_2 from './Reactiive_Episode_2';
@@ -13,7 +16,7 @@ const Stack = createStackNavigator();
 
 const Reactiive = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen name={'Reactiive Reanimated'} component={InnerScreens} />
       <Stack.Screen
         name={NavigationRoutes.Reactiive_Episode_1}
@@ -76,7 +79,11 @@ const styles = StyleSheet.create({
     borderRadius: wp(2),
   },
 });
-
+const screenOptions = {
+  headerShown: false,
+  headerTitleAlign: 'center',
+  ...TransitionPresets.SlideFromRightIOS,
+};
 const DATA = [
   {
     title: Strings.Reactiive_Episode_1,

@@ -13,6 +13,7 @@ import {
   ReRender,
   GIF,
   Clock,
+  VideoPlayers,
 } from './Tasks';
 
 const Stack = createStackNavigator();
@@ -41,6 +42,10 @@ const Routes = () => {
         />
         <Stack.Screen name={NavigationRoutes.GIF} component={GIF} />
         <Stack.Screen name={NavigationRoutes.Clock} component={Clock} />
+        <Stack.Screen
+          name={NavigationRoutes.VideoPlayers}
+          component={VideoPlayers}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

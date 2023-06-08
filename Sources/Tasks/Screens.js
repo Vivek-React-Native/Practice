@@ -30,6 +30,10 @@ const Screens = ({ navigation }) => {
       title: Strings.Clock,
       navigate: NavigationRoutes.Clock,
     },
+    {
+      title: Strings.VideoPlayers,
+      navigate: NavigationRoutes.VideoPlayers,
+    },
   ];
 
   const RenderScreens = ({ item, index }) => {

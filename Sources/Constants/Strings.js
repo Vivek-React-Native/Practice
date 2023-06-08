@@ -19,6 +19,9 @@ const Strings = {
   ParallaxCarousel: 'Parallax Carousel',
   CatalinMiron_Carousel_1: 'Catalin MironCarousel 1',
   AnimatedTabs: 'Animated Tabs',
+
+  VideoPlayers: 'Video Players',
+  CustomVideoPlayer: 'Custom Video Player',
 };
 
 export default Strings;

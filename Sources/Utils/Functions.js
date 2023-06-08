@@ -1,5 +1,5 @@
 import { Alert, Linking } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 import moment from 'moment';
 const ALERT = ({ Title, Text, Buttons }) => Alert.alert(Title, Text, Buttons);
 const OpenUrl = url => Linking.openURL(url);
@@ -34,7 +34,13 @@ const SumOfArray = ({ array, key }) => {
   const sum = array?.reduce((a, v) => a + Number(key ? v?.[key] : v), 0);
   return Number(sum);
 };
-
+const toHHMMSS = seconds => {
+  let time = moment.utc(seconds * 1000).format('HH:mm:ss');
+  if (time.startsWith('00:')) {
+    time = time.slice(3);
+  }
+  return time;
+};
 export default {
   ALERT,
   OpenUrl,
@@ -45,4 +51,5 @@ export default {
   FormatedDate,
   ToPercentage,
   SumOfArray,
+  toHHMMSS,
 };

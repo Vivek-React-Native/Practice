@@ -1,29 +1,25 @@
-const Path = '../Assets/Images/';
-const GIF_Path = '../Assets/GIFs/';
+const ImagePath = '../Assets/Images/';
 const png = '.png';
 const jpg = '.jpg';
-const gif = '.gif';
 
 const Images = {
-  AppLogo: require(Path + 'AppLogo' + png),
-  AppSplashScreen: require(Path + 'AppSplashScreen' + png),
-  LeftArrow: require(Path + 'LeftArrow' + png),
-  Clock: require(Path + 'Clock' + png),
-  Image_0: require(Path + 'Image_0' + jpg),
-  Image_1: require(Path + 'Image_1' + jpg),
-  Image_2: require(Path + 'Image_2' + jpg),
-  Image_3: require(Path + 'Image_3' + jpg),
-  Lion_1: require(Path + 'Lion_1' + jpg),
-  Cat_1: require(Path + 'Cat_1' + jpg),
-  Dog_1: require(Path + 'Dog_1' + jpg),
-  Swan_1: require(Path + 'Swan_1' + jpg),
+  AppLogo: require(ImagePath + 'AppLogo' + png),
+  AppSplashScreen: require(ImagePath + 'AppSplashScreen' + png),
+  LeftArrow: require(ImagePath + 'LeftArrow' + png),
+  Clock: require(ImagePath + 'Clock' + png),
+  Backward: require(ImagePath + 'Backward' + png),
+  Previous: require(ImagePath + 'Previous' + png),
+  Pause: require(ImagePath + 'Pause' + png),
+  Play: require(ImagePath + 'Play' + png),
 
-  // GIF
-  Butterfly: require(GIF_Path + 'Butterfly' + gif),
-  ColorLines: require(GIF_Path + 'ColorLines' + gif),
-  GirlHairs: require(GIF_Path + 'GirlHairs' + gif),
-  Houses: require(GIF_Path + 'Houses' + gif),
-  Sun: require(GIF_Path + 'Sun' + gif),
+  Image_0: require(ImagePath + 'Image_0' + jpg),
+  Image_1: require(ImagePath + 'Image_1' + jpg),
+  Image_2: require(ImagePath + 'Image_2' + jpg),
+  Image_3: require(ImagePath + 'Image_3' + jpg),
+  Lion_1: require(ImagePath + 'Lion_1' + jpg),
+  Cat_1: require(ImagePath + 'Cat_1' + jpg),
+  Dog_1: require(ImagePath + 'Dog_1' + jpg),
+  Swan_1: require(ImagePath + 'Swan_1' + jpg),
 };
 
 export default Images;

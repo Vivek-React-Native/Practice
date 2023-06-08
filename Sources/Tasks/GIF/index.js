@@ -1,16 +1,16 @@
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { RNHeader, RNStyles } from '../../Common';
-import { Images, Strings } from '../../Constants';
+import { GIFs, Strings } from '../../Constants';
 import { hp, wp } from '../../Theme';
 
 const GIF = () => {
   const GIF = [
-    { gif: Images.Butterfly },
-    { gif: Images.ColorLines },
-    { gif: Images.GirlHairs },
-    { gif: Images.Houses },
-    { gif: Images.Sun },
+    { gif: GIFs.Butterfly },
+    { gif: GIFs.ColorLines },
+    { gif: GIFs.GirlHairs },
+    { gif: GIFs.Houses },
+    { gif: GIFs.Sun },
   ];
 
   return (

@@ -11,6 +11,8 @@ const Images = {
   Previous: require(ImagePath + 'Previous' + png),
   Pause: require(ImagePath + 'Pause' + png),
   Play: require(ImagePath + 'Play' + png),
+  Mute: require(ImagePath + 'Mute' + png),
+  VolumeUp: require(ImagePath + 'VolumeUp' + png),
 
   Image_0: require(ImagePath + 'Image_0' + jpg),
   Image_1: require(ImagePath + 'Image_1' + jpg),

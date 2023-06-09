@@ -21,7 +21,7 @@ const CustomVideoPlayer = () => {
     EndSeconds: 0,
     Speed: 1,
     CurrentVideo: 0,
-    Volume: 1,
+    Volume: 0.8,
   });
 
   const onPreviousVideo = () => {
@@ -132,13 +132,23 @@ const CustomVideoPlayer = () => {
             </View>
 
             <RNText style={styles.title}>Volume</RNText>
-            <Slider
-              value={State.Volume}
-              minimumTrackTintColor={Colors.Orange}
-              maximumTrackTintColor={Colors.Orange + '50'}
-              thumbStyle={styles.thumbStyle}
-              onValueChange={v => setState(p => ({ ...p, Volume: v }))}
-            />
+            <View style={RNStyles.flexRowBetween}>
+              <Icons
+                source={Images.Mute}
+                onPress={() => setState(p => ({ ...p, Volume: 0 }))}
+              />
+              <Slider
+                value={State.Volume}
+                minimumTrackTintColor={Colors.Orange}
+                maximumTrackTintColor={Colors.Orange + '50'}
+                thumbStyle={styles.thumbStyle}
+                onValueChange={v => setState(p => ({ ...p, Volume: v }))}
+              />
+              <Icons
+                source={Images.VolumeUp}
+                onPress={() => setState(p => ({ ...p, Volume: 1 }))}
+              />
+            </View>
           </View>
         </ScrollView>
       </View>

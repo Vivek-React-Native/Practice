@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, ActivityIndicator, View } from 'react-native';
 import { Colors, hp } from '../Theme';
-const RNPagginationLoader = ({ size, color }) => {
+const RNPagginationLoader = ({ size, color, style }) => {
   return (
-    <View style={styles.Box}>
+    <View style={[styles.Box, style]}>
       <ActivityIndicator
         size={size || 'large'}
         color={color || Colors.N726E3E}

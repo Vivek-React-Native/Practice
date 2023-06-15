@@ -4,6 +4,7 @@ const NavigationRoutes = {
   ReRenderIssue: 'ReRenderIssue',
   GIF: 'GIF',
   Clock: 'Clock',
+  Wifi: 'Wifi',
 
   Reactiive: 'Reactiive',
   Reactiive_Episode_1: 'Reactiive Episode 1',

@@ -6,3 +6,4 @@ export { default as ReRender } from './ReRender';
 export { default as GIF } from './GIF';
 export { default as Clock } from './Clock';
 export { default as VideoPlayers } from './VideoPlayers';
+export { default as Wifi } from './Wifi';

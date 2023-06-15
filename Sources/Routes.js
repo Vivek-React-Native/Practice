@@ -14,6 +14,7 @@ import {
   GIF,
   Clock,
   VideoPlayers,
+  Wifi,
 } from './Tasks';
 
 const Stack = createStackNavigator();
@@ -46,6 +47,7 @@ const Routes = () => {
           name={NavigationRoutes.VideoPlayers}
           component={VideoPlayers}
         />
+        <Stack.Screen name={NavigationRoutes.Wifi} component={Wifi} />
       </Stack.Navigator>
     </NavigationContainer>
   );

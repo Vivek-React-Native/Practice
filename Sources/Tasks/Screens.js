@@ -34,6 +34,10 @@ const Screens = ({ navigation }) => {
       title: Strings.VideoPlayers,
       navigate: NavigationRoutes.VideoPlayers,
     },
+    {
+      title: Strings.Wifi,
+      navigate: NavigationRoutes.Wifi,
+    },
   ];
 
   const RenderScreens = ({ item, index }) => {

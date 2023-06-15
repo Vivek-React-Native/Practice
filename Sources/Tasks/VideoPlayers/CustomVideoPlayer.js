@@ -61,27 +61,27 @@ const CustomVideoPlayer = () => {
       <RNHeader title={Strings.CustomVideoPlayer} />
 
       <View style={RNStyles.container}>
-        <Video
-          ref={VideoRef}
-          source={VIDEOS[State.CurrentVideo].video}
-          rate={State.Speed}
-          paused={State.IsPaused}
-          volume={State.Volume}
-          resizeMode={'cover'}
-          style={styles.VideoStyle}
-          onLoad={({ duration }) =>
-            setState(p => ({ ...p, EndSeconds: duration }))
-          }
-          onProgress={({ currentTime }) =>
-            setState(p => ({ ...p, StartSeconds: currentTime }))
-          }
-          onEnd={() => {
-            setState(p => ({ ...p, IsPaused: true }));
-            onNextVideo();
-          }}
-        />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Video
+            ref={VideoRef}
+            source={VIDEOS[State.CurrentVideo].video}
+            rate={State.Speed}
+            paused={State.IsPaused}
+            volume={State.Volume}
+            resizeMode={'cover'}
+            style={styles.VideoStyle}
+            onLoad={({ duration }) =>
+              setState(p => ({ ...p, EndSeconds: duration }))
+            }
+            onProgress={({ currentTime }) =>
+              setState(p => ({ ...p, StartSeconds: currentTime }))
+            }
+            onEnd={() => {
+              setState(p => ({ ...p, IsPaused: true }));
+              onNextVideo();
+            }}
+          />
 
-        <ScrollView>
           <View style={styles.ControllerContainer}>
             <RNText
               pBottom={hp(2)}
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.Orange,
   },
   VideoStyle: {
-    width: wp(100),
+    width: '100%',
     height: hp(30),
     alignSelf: 'center',
   },

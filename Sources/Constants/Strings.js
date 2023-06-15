@@ -8,6 +8,7 @@ const Strings = {
   Dog: 'Dog',
   Lion: 'Lion King',
   Swan: 'Swan',
+  Wifi: 'Wifi',
 
   Reactiive: 'Reactiive',
   Reactiive_Episode_1: 'Reactiive Episode 1',

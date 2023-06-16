@@ -2,6 +2,7 @@
 #import <Firebase.h>
 #import "RNSplashScreen.h"
 #import <React/RCTBundleURLProvider.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation AppDelegate
 
@@ -15,6 +16,7 @@
   // [RNSplashScreen show];
   // return [super application:application didFinishLaunchingWithOptions:launchOptions];
 
+  [GMSServices provideAPIKey:@"AIzaSyAi_FD9xNCdX7dX10TKlW0CfrY-LiK6YX0"];
   bool didFinish=[super application:application didFinishLaunchingWithOptions:launchOptions];
   [RNSplashScreen show];  // here
   [FIRApp configure];

@@ -26,7 +26,7 @@
 		8819501A2A1E0445009E9CAD /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8819500E2A1E0445009E9CAD /* OpenSans-ExtraBold.ttf */; };
 		8819501B2A1E0445009E9CAD /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8819500F2A1E0445009E9CAD /* OpenSans-ExtraBoldItalic.ttf */; };
 		8819501C2A1E0445009E9CAD /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 881950102A1E0445009E9CAD /* OpenSans-LightItalic.ttf */; };
-		88568CCD2A28BDFA0080CE8B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88568CCC2A28BDFA0080CE8B /* GoogleService-Info.plist */; };
+		88921DF02A41769000E1EA1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88921DEF2A41769000E1EA1E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +75,7 @@
 		8819500E2A1E0445009E9CAD /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		8819500F2A1E0445009E9CAD /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		881950102A1E0445009E9CAD /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
-		88568CCC2A28BDFA0080CE8B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		88921DEF2A41769000E1EA1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88CB4CEF2A3982FD00851D3A /* Practice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Practice.entitlements; path = Practice/Practice.entitlements; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Practice-PracticeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice-PracticeTests.release.xcconfig"; path = "Target Support Files/Pods-Practice-PracticeTests/Pods-Practice-PracticeTests.release.xcconfig"; sourceTree = "<group>"; };
 		90ADB04853144ABBBA53373F /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBold.ttf"; path = "../Sources/Assets/Fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -125,6 +125,7 @@
 		13B07FAE1A68108700A75B9A /* Practice */ = {
 			isa = PBXGroup;
 			children = (
+				88921DEF2A41769000E1EA1E /* GoogleService-Info.plist */,
 				88CB4CEF2A3982FD00851D3A /* Practice.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -156,7 +157,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				88568CCC2A28BDFA0080CE8B /* GoogleService-Info.plist */,
 				881950042A1E042E009E9CAD /* Fonts */,
 				13B07FAE1A68108700A75B9A /* Practice */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -326,7 +326,7 @@
 			files = (
 				881950142A1E0445009E9CAD /* OpenSans-BoldItalic.ttf in Resources */,
 				881950112A1E0445009E9CAD /* OpenSans-SemiBoldItalic.ttf in Resources */,
-				88568CCD2A28BDFA0080CE8B /* GoogleService-Info.plist in Resources */,
+				88921DF02A41769000E1EA1E /* GoogleService-Info.plist in Resources */,
 				8819501C2A1E0445009E9CAD /* OpenSans-LightItalic.ttf in Resources */,
 				881950192A1E0445009E9CAD /* OpenSans-SemiBold.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,

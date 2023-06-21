@@ -18,6 +18,7 @@ const RNText = ({
   pVertical,
   spacing,
   onPress,
+  ...restProps
 }) => {
   const TextStyles = {
     color: color ?? Colors.Black,
@@ -37,7 +38,8 @@ const RNText = ({
     <Text
       onPress={onPress}
       numberOfLines={numOfLines}
-      style={[TextStyles, style]}>
+      style={[TextStyles, style]}
+      {...restProps}>
       {children}
     </Text>
   );

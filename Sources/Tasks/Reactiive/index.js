@@ -11,6 +11,7 @@ import Reactiive_Episode_1 from './Reactiive_Episode_1';
 import Reactiive_Episode_2 from './Reactiive_Episode_2';
 import Reactiive_Episode_3 from './Reactiive_Episode_3';
 import Reactiive_Episode_4 from './Reactiive_Episode_4';
+import RandomAnimation from './RandomAnimation';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,10 @@ const Reactiive = () => {
       <Stack.Screen
         name={NavigationRoutes.Reactiive_Episode_4}
         component={Reactiive_Episode_4}
+      />
+      <Stack.Screen
+        name={NavigationRoutes.RandomAnimation}
+        component={RandomAnimation}
       />
     </Stack.Navigator>
   );
@@ -100,6 +105,10 @@ const DATA = [
   {
     title: Strings.Reactiive_Episode_4,
     navigate: NavigationRoutes.Reactiive_Episode_4,
+  },
+  {
+    title: Strings.RandomAnimation,
+    navigate: NavigationRoutes.RandomAnimation,
   },
 ];
 

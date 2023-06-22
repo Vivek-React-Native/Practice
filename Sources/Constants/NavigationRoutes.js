@@ -7,6 +7,7 @@ const NavigationRoutes = {
   Wifi: 'Wifi',
 
   Reactiive: 'Reactiive',
+  RandomAnimation: 'Random Animation',
   Reactiive_Episode_1: 'Reactiive Episode 1',
   Reactiive_Episode_2: 'Reactiive Episode 2',
   Reactiive_Episode_3: 'Reactiive Episode 3',

@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { RNHeader, RNStyles } from '../../Common';
+import { PRContainer, RNStyles } from '../../Common';
 import { Colors, hp, wp } from '../../Theme';
 import { Images, Strings } from '../../Constants';
 
@@ -38,43 +38,39 @@ const HorizontalImageSlider = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <RNHeader title={Strings.HorizontalImageSlider} />
-      <View style={styles.content}>
-        <FlatList
-          ref={FlatListRef}
-          data={IMAGES}
-          keyExtractor={(v, i) => String(i)}
-          horizontal={true}
-          onScroll={onScroll}
-          pagingEnabled={true}
-          showsHorizontalScrollIndicator={false}
-          renderItem={renderImages}
-        />
-        <View style={styles.DotContainer}>
-          {Array.from({ length: IMAGES.length }).map((v, i) => (
-            <TouchableOpacity
-              key={i}
-              onPress={() => onDotPress(i)}
-              style={[
-                styles.Dot,
-                {
-                  backgroundColor:
-                    State.CurrentSlider === i ? Colors.Orange : Colors.DBDBDB,
-                },
-              ]}
-            />
-          ))}
-        </View>
+    <PRContainer
+      HeaderTitle={Strings.HorizontalImageSlider}
+      ContainerStyle={styles.content}>
+      <FlatList
+        ref={FlatListRef}
+        data={IMAGES}
+        keyExtractor={(v, i) => String(i)}
+        horizontal={true}
+        onScroll={onScroll}
+        pagingEnabled={true}
+        showsHorizontalScrollIndicator={false}
+        renderItem={renderImages}
+      />
+      <View style={styles.DotContainer}>
+        {Array.from({ length: IMAGES.length }).map((v, i) => (
+          <TouchableOpacity
+            key={i}
+            onPress={() => onDotPress(i)}
+            style={[
+              styles.Dot,
+              {
+                backgroundColor:
+                  State.CurrentSlider === i ? Colors.Orange : Colors.DBDBDB,
+              },
+            ]}
+          />
+        ))}
       </View>
-    </View>
+    </PRContainer>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    ...RNStyles.container,
-  },
   content: {
     width: ImageWidth,
     height: ImageHeight,

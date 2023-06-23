@@ -7,6 +7,10 @@ import { NavigationRoutes, Strings } from '../Constants';
 const Screens = ({ navigation }) => {
   const AllScreens = [
     {
+      title: Strings.Firebase,
+      navigate: NavigationRoutes.Firebase,
+    },
+    {
       title: Strings.HorizontalImageSlider,
       navigate: NavigationRoutes.HorizontalImageSlider,
     },
@@ -17,14 +21,6 @@ const Screens = ({ navigation }) => {
     {
       title: Strings.CatalinMiron,
       navigate: NavigationRoutes.CatalinMiron,
-    },
-    {
-      title: Strings.ReRenderIssue,
-      navigate: NavigationRoutes.ReRenderIssue,
-    },
-    {
-      title: Strings.GIF,
-      navigate: NavigationRoutes.GIF,
     },
     {
       title: Strings.Clock,

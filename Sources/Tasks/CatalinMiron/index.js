@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { RNHeader, RNStyles, RNText } from '../../Common';
+import { PRContainer, RNHeader, RNStyles, RNText } from '../../Common';
 import {
   TransitionPresets,
   createStackNavigator,
@@ -48,15 +48,14 @@ const InnerScreens = ({ navigation }) => {
   };
 
   return (
-    <View style={RNStyles.container}>
-      <RNHeader title={Strings.CatalinMiron} />
+    <PRContainer HeaderTitle={Strings.CatalinMiron}>
       <FlatList
         data={DATA}
         contentContainerStyle={styles.contentContainerStyle}
         keyExtractor={(v, i) => String(i)}
         renderItem={RenderScreens}
       />
-    </View>
+    </PRContainer>
   );
 };
 

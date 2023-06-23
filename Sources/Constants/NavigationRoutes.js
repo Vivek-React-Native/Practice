@@ -1,8 +1,6 @@
 const NavigationRoutes = {
   Screens: 'Screens',
   HorizontalImageSlider: 'Horizontal Image Slider',
-  ReRenderIssue: 'ReRenderIssue',
-  GIF: 'GIF',
   Clock: 'Clock',
   Wifi: 'Wifi',
 
@@ -20,6 +18,9 @@ const NavigationRoutes = {
 
   VideoPlayers: 'Video Players',
   CustomVideoPlayer: 'Custom Video Player',
+
+  Firebase: 'Firebase',
+  FirebaseAnalytics: 'Firebase Analytics',
 };
 
 export default NavigationRoutes;

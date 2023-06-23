@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { RNButton, RNHeader, RNStyles } from '../../Common';
+import { PRContainer, RNButton, RNHeader, RNStyles } from '../../Common';
 import { Colors, hp } from '../../Theme';
 import ReAnimated, {
   useAnimatedStyle,
@@ -40,14 +40,13 @@ const Reactiive_Episode_1 = () => {
   };
 
   return (
-    <View style={RNStyles.container}>
-      <RNHeader title={Strings.Reactiive_Episode_1} />
-      <View style={styles.content}>
-        <ReAnimated.View style={[styles.Box, BoxStyle]} />
-        <RNButton title={'Start Animation'} onPress={onStartAnimation} />
-        <RNButton title={'End Animation'} onPress={onEndAnimation} />
-      </View>
-    </View>
+    <PRContainer
+      HeaderTitle={Strings.Reactiive_Episode_1}
+      ContainerStyle={styles.content}>
+      <ReAnimated.View style={[styles.Box, BoxStyle]} />
+      <RNButton title={'Start Animation'} onPress={onStartAnimation} />
+      <RNButton title={'End Animation'} onPress={onEndAnimation} />
+    </PRContainer>
   );
 };
 

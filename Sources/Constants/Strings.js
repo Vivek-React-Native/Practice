@@ -1,8 +1,6 @@
 const Strings = {
   TaskList: 'Tasks',
   HorizontalImageSlider: 'Horizontal Image Slider',
-  ReRenderIssue: 'Re-Render issue in React Native.',
-  GIF: 'GIF',
   Clock: 'Clock',
   Cat: 'Pussy Cat',
   Dog: 'Dog',
@@ -24,6 +22,9 @@ const Strings = {
 
   VideoPlayers: 'Video Players',
   CustomVideoPlayer: 'Custom Video Player',
+
+  Firebase: 'Firebase',
+  FirebaseAnalytics: 'Firebase Analytics',
 };
 
 export default Strings;

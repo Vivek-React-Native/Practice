@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, StatusBar, StyleSheet, View } from 'react-native';
-import { RNHeader, RNStyles } from '../../../Common';
+import { PRContainer, RNHeader, RNStyles } from '../../../Common';
 import { Images, Strings } from '../../../Constants';
 import { Colors, hp, wp } from '../../../Theme';
 import Reanimated, {
@@ -23,33 +23,28 @@ const AnimatedTabs = () => {
   });
 
   return (
-    <View style={RNStyles.container}>
-      <StatusBar barStyle={'light-content'} />
-      <RNHeader title={Strings.AnimatedTabs} />
-
-      <View style={styles.container}>
-        <Reanimated.FlatList
-          data={data}
-          keyExtractor={(v, i) => String(i)}
-          pagingEnabled={true}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          bounces={false}
-          onScroll={onScroll}
-          renderItem={({ item, index }) => (
-            <View style={styles.imageContainer}>
-              <View style={styles.overlay} />
-              <Image
-                source={item.image}
-                resizeMode={'cover'}
-                style={RNStyles.image100}
-              />
-            </View>
-          )}
-        />
-        <Tabs data={data} scrollX={scrollX} />
-      </View>
-    </View>
+    <PRContainer HeaderTitle={Strings.AnimatedTabs}>
+      <Reanimated.FlatList
+        data={data}
+        keyExtractor={(v, i) => String(i)}
+        pagingEnabled={true}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        bounces={false}
+        onScroll={onScroll}
+        renderItem={({ item, index }) => (
+          <View style={styles.imageContainer}>
+            <View style={styles.overlay} />
+            <Image
+              source={item.image}
+              resizeMode={'cover'}
+              style={RNStyles.image100}
+            />
+          </View>
+        )}
+      />
+      <Tabs data={data} scrollX={scrollX} />
+    </PRContainer>
   );
 };
 

@@ -8,3 +8,4 @@ export { default as RNLoader } from './RNLoader';
 export { default as RNPagginationLoader } from './RNPagginationLoader';
 export { default as RNStyles } from './RNStyles';
 export { default as RNText } from './RNText';
+export { default as PRContainer } from './PRContainer';

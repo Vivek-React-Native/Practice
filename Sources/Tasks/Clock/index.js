@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
-import { RNHeader, RNStyles } from '../../Common';
+import { PRContainer, RNHeader, RNStyles } from '../../Common';
 import { Images, Strings } from '../../Constants';
 import { Colors, wp } from '../../Theme';
 import Reanimated, {
@@ -68,23 +68,20 @@ const Clock = () => {
   }, [State.second]);
 
   return (
-    <View style={RNStyles.container}>
-      <RNHeader title={Strings.Clock} />
-      <View style={styles.container}>
-        <View style={styles.Box}>
-          <Image source={Images.Clock} style={styles.ClockImage} />
-          <Reanimated.View style={[styles.Mover, HourStyle]}>
-            <View style={styles.Hour} />
-          </Reanimated.View>
-          <Reanimated.View style={[styles.Mover, MinuteStyle]}>
-            <View style={styles.Minute} />
-          </Reanimated.View>
-          <Reanimated.View style={[styles.Mover, SecondStyle]}>
-            <View style={styles.Second} />
-          </Reanimated.View>
-        </View>
+    <PRContainer HeaderTitle={Strings.Clock} ContainerStyle={styles.container}>
+      <View style={styles.Box}>
+        <Image source={Images.Clock} style={styles.ClockImage} />
+        <Reanimated.View style={[styles.Mover, HourStyle]}>
+          <View style={styles.Hour} />
+        </Reanimated.View>
+        <Reanimated.View style={[styles.Mover, MinuteStyle]}>
+          <View style={styles.Minute} />
+        </Reanimated.View>
+        <Reanimated.View style={[styles.Mover, SecondStyle]}>
+          <View style={styles.Second} />
+        </Reanimated.View>
       </View>
-    </View>
+    </PRContainer>
   );
 };
 

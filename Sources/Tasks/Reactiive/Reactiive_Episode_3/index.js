@@ -6,7 +6,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { Colors } from '../../../Theme';
 import Page from './Page';
-import { RNHeader, RNStyles } from '../../../Common';
+import { PRContainer, RNHeader, RNStyles } from '../../../Common';
 import { Strings } from '../../../Constants';
 
 const WORDS = [
@@ -25,8 +25,7 @@ const Reactiive_Episode_3 = () => {
   }, []);
 
   return (
-    <View style={RNStyles.container}>
-      <RNHeader title={Strings.Reactiive_Episode_3} />
+    <PRContainer HeaderTitle={Strings.Reactiive_Episode_3}>
       <Animated.ScrollView
         onScroll={onScroll}
         scrollEventThrottle={16}
@@ -37,7 +36,7 @@ const Reactiive_Episode_3 = () => {
           <Page key={i} item={v} index={i} TranslateX={TranslateX} />
         ))}
       </Animated.ScrollView>
-    </View>
+    </PRContainer>
   );
 };
 

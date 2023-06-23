@@ -7,7 +7,7 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
-import { RNHeader, RNStyles } from '../../Common';
+import { PRContainer, RNHeader, RNStyles } from '../../Common';
 import { Colors, wp } from '../../Theme';
 import { Strings } from '../../Constants';
 
@@ -62,16 +62,15 @@ const Reactiive_Episode_2 = () => {
   }, []);
 
   return (
-    <View style={RNStyles.container}>
-      <RNHeader title={Strings.Reactiive_Episode_2} />
-      <View style={styles.content}>
-        <View style={styles.Circle}>
-          <PanGestureHandler onGestureEvent={PanGestureEvent}>
-            <Animated.View style={[styles.Box, BoxStyle]} />
-          </PanGestureHandler>
-        </View>
+    <PRContainer
+      HeaderTitle={Strings.Reactiive_Episode_2}
+      ContainerStyle={styles.content}>
+      <View style={styles.Circle}>
+        <PanGestureHandler onGestureEvent={PanGestureEvent}>
+          <Animated.View style={[styles.Box, BoxStyle]} />
+        </PanGestureHandler>
       </View>
-    </View>
+    </PRContainer>
   );
 };
 

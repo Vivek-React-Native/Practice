@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { RNHeader, RNStyles, RNText } from '../../Common';
+import { PRContainer, RNHeader, RNStyles, RNText } from '../../Common';
 import { Images, Strings, Videos } from '../../Constants';
 import Video from 'react-native-video';
 import Slider from './Slider';
@@ -57,102 +57,98 @@ const CustomVideoPlayer = () => {
   };
 
   return (
-    <View style={RNStyles.container}>
-      <RNHeader title={Strings.CustomVideoPlayer} />
+    <PRContainer HeaderTitle={Strings.CustomVideoPlayer}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Video
+          ref={VideoRef}
+          source={VIDEOS[State.CurrentVideo].video}
+          rate={State.Speed}
+          paused={State.IsPaused}
+          volume={State.Volume}
+          resizeMode={'cover'}
+          style={styles.VideoStyle}
+          onLoad={({ duration }) =>
+            setState(p => ({ ...p, EndSeconds: duration }))
+          }
+          onProgress={({ currentTime }) =>
+            setState(p => ({ ...p, StartSeconds: currentTime }))
+          }
+          onEnd={() => {
+            setState(p => ({ ...p, IsPaused: true }));
+            onNextVideo();
+          }}
+        />
 
-      <View style={RNStyles.container}>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <Video
-            ref={VideoRef}
-            source={VIDEOS[State.CurrentVideo].video}
-            rate={State.Speed}
-            paused={State.IsPaused}
-            volume={State.Volume}
-            resizeMode={'cover'}
-            style={styles.VideoStyle}
-            onLoad={({ duration }) =>
-              setState(p => ({ ...p, EndSeconds: duration }))
-            }
-            onProgress={({ currentTime }) =>
-              setState(p => ({ ...p, StartSeconds: currentTime }))
-            }
-            onEnd={() => {
-              setState(p => ({ ...p, IsPaused: true }));
-              onNextVideo();
-            }}
-          />
+        <View style={styles.ControllerContainer}>
+          <RNText
+            pBottom={hp(2)}
+            size={FontSize.font24}
+            family={FontFamily.OpenSans_Bold}
+            style={styles.SongTitle}>
+            {VIDEOS[State.CurrentVideo].title}
+          </RNText>
 
-          <View style={styles.ControllerContainer}>
-            <RNText
-              pBottom={hp(2)}
-              size={FontSize.font24}
-              family={FontFamily.OpenSans_Bold}
-              style={styles.SongTitle}>
-              {VIDEOS[State.CurrentVideo].title}
-            </RNText>
-
-            <View style={RNStyles.flexRowAround}>
-              <Icons source={Images.Previous} onPress={onPreviousVideo} />
-              <Icons source={Images.Backward} onPress={onBackwardPress} />
-              <Icons
-                source={State.IsPaused ? Images.Play : Images.Pause}
-                onPress={() => setState(p => ({ ...p, IsPaused: !p.IsPaused }))}
-              />
-              <Icons
-                source={Images.Backward}
-                iconStyle={{ transform: [{ rotate: '180deg' }] }}
-                onPress={onForwardPress}
-              />
-              <Icons
-                source={Images.Previous}
-                iconStyle={{ transform: [{ rotate: '180deg' }] }}
-                onPress={onNextVideo}
-              />
-            </View>
-
-            <View style={styles.DurationContainer}>
-              <RNText>{Functions.toHHMMSS(State.StartSeconds)}</RNText>
-              <Slider
-                value={State.StartSeconds}
-                maximumValue={State.EndSeconds}
-                onValueChange={v => VideoRef.current.seek(v)}
-              />
-              <RNText>{Functions.toHHMMSS(State.EndSeconds)}</RNText>
-            </View>
-
-            <RNText style={styles.title}>Speed</RNText>
-            <View style={RNStyles.flexRowAround}>
-              {[0.5, 0.8, 1, 1.5, 2].map((v, i) => (
-                <Icons
-                  key={i}
-                  text={v}
-                  onPress={() => setState(p => ({ ...p, Speed: v }))}
-                />
-              ))}
-            </View>
-
-            <RNText style={styles.title}>Volume</RNText>
-            <View style={RNStyles.flexRowBetween}>
-              <Icons
-                source={Images.Mute}
-                onPress={() => setState(p => ({ ...p, Volume: 0 }))}
-              />
-              <Slider
-                value={State.Volume}
-                minimumTrackTintColor={Colors.Orange}
-                maximumTrackTintColor={Colors.Orange + '50'}
-                thumbStyle={styles.thumbStyle}
-                onValueChange={v => setState(p => ({ ...p, Volume: v }))}
-              />
-              <Icons
-                source={Images.VolumeUp}
-                onPress={() => setState(p => ({ ...p, Volume: 1 }))}
-              />
-            </View>
+          <View style={RNStyles.flexRowAround}>
+            <Icons source={Images.Previous} onPress={onPreviousVideo} />
+            <Icons source={Images.Backward} onPress={onBackwardPress} />
+            <Icons
+              source={State.IsPaused ? Images.Play : Images.Pause}
+              onPress={() => setState(p => ({ ...p, IsPaused: !p.IsPaused }))}
+            />
+            <Icons
+              source={Images.Backward}
+              iconStyle={{ transform: [{ rotate: '180deg' }] }}
+              onPress={onForwardPress}
+            />
+            <Icons
+              source={Images.Previous}
+              iconStyle={{ transform: [{ rotate: '180deg' }] }}
+              onPress={onNextVideo}
+            />
           </View>
-        </ScrollView>
-      </View>
-    </View>
+
+          <View style={styles.DurationContainer}>
+            <RNText>{Functions.toHHMMSS(State.StartSeconds)}</RNText>
+            <Slider
+              value={State.StartSeconds}
+              maximumValue={State.EndSeconds}
+              onValueChange={v => VideoRef.current.seek(v)}
+            />
+            <RNText>{Functions.toHHMMSS(State.EndSeconds)}</RNText>
+          </View>
+
+          <RNText style={styles.title}>Speed</RNText>
+          <View style={RNStyles.flexRowAround}>
+            {[0.5, 0.8, 1, 1.5, 2].map((v, i) => (
+              <Icons
+                key={i}
+                text={v}
+                onPress={() => setState(p => ({ ...p, Speed: v }))}
+              />
+            ))}
+          </View>
+
+          <RNText style={styles.title}>Volume</RNText>
+          <View style={RNStyles.flexRowBetween}>
+            <Icons
+              source={Images.Mute}
+              onPress={() => setState(p => ({ ...p, Volume: 0 }))}
+            />
+            <Slider
+              value={State.Volume}
+              minimumTrackTintColor={Colors.Orange}
+              maximumTrackTintColor={Colors.Orange + '50'}
+              thumbStyle={styles.thumbStyle}
+              onValueChange={v => setState(p => ({ ...p, Volume: v }))}
+            />
+            <Icons
+              source={Images.VolumeUp}
+              onPress={() => setState(p => ({ ...p, Volume: 1 }))}
+            />
+          </View>
+        </View>
+      </ScrollView>
+    </PRContainer>
   );
 };
 

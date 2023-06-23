@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native';
 import {
+  PRContainer,
   RNButton,
   RNHeader,
   RNInput,
@@ -104,9 +105,7 @@ const Wifi = () => {
   };
 
   return (
-    <View style={RNStyles.container}>
-      <RNHeader title={Strings.Wifi} />
-
+    <PRContainer HeaderTitle={Strings.Wifi}>
       <ScrollView>
         <View style={styles.container}>
           <RNText
@@ -179,7 +178,7 @@ const Wifi = () => {
             ))}
         </View>
       </ScrollView>
-    </View>
+    </PRContainer>
   );
 };
 

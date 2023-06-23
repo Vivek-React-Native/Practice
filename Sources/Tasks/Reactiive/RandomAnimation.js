@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { RNHeader, RNStyles } from '../../Common';
+import { PRContainer, RNHeader, RNStyles } from '../../Common';
 import { Strings } from '../../Constants';
 import { Colors, hp, wp } from '../../Theme';
 import Reanimated, {
@@ -48,15 +48,13 @@ const RandomAnimation = ({ navigation }) => {
   });
 
   return (
-    <View style={RNStyles.container}>
-      <RNHeader title={Strings.RandomAnimation} />
-
-      <View style={styles.content}>
-        <PanGestureHandler onGestureEvent={onGestureEvent}>
-          <Reanimated.View style={[styles.Box, BoxStyle]} />
-        </PanGestureHandler>
-      </View>
-    </View>
+    <PRContainer
+      HeaderTitle={Strings.RandomAnimation}
+      ContainerStyle={styles.content}>
+      <PanGestureHandler onGestureEvent={onGestureEvent}>
+        <Reanimated.View style={[styles.Box, BoxStyle]} />
+      </PanGestureHandler>
+    </PRContainer>
   );
 };
 

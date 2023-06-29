@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { PRContainer } from '../../Common';
+import { FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { PRContainer, RNText } from '../../Common';
 import { NavigationRoutes, Strings } from '../../Constants';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Colors, hp, wp } from '../../Theme';
 
 const Stack = createStackNavigator();
 
@@ -14,17 +15,44 @@ const Firebase = () => {
   );
 };
 
-const InnerScreens = () => {
-  return <PRContainer HeaderTitle={Strings.Firebase}></PRContainer>;
+const InnerScreens = ({ navigation }) => {
+  const RenderItem = ({ item, index }) => {
+    return (
+      <TouchableOpacity
+        onPress={() => navigation.navigate(item.navigate)}
+        style={styles.renderScreens}>
+        <RNText>{item.title}</RNText>
+      </TouchableOpacity>
+    );
+  };
+
+  return (
+    <PRContainer HeaderTitle={Strings.Firebase}>
+      <FlatList
+        data={DATA}
+        keyExtractor={(v, i) => String(i)}
+        contentContainerStyle={styles.contentContainerStyle}
+        renderItem={RenderItem}
+      />
+    </PRContainer>
+  );
 };
 
-const DATA = [
-  {
-    title: Strings.FirebaseAnalytics,
-    navigate: NavigationRoutes.FirebaseAnalytics,
+const styles = StyleSheet.create({
+  contentContainerStyle: {
+    paddingVertical: hp(2),
   },
-];
+  renderScreens: {
+    borderWidth: 1,
+    borderColor: Colors.ACACAC,
+    marginHorizontal: wp(3),
+    marginVertical: hp(1),
+    paddingVertical: hp(1.5),
+    paddingHorizontal: wp(4),
+    borderRadius: wp(2),
+  },
+});
 
-const styles = StyleSheet.create({});
+const DATA = [];
 
 export default Firebase;

@@ -3,6 +3,7 @@ const NavigationRoutes = {
   HorizontalImageSlider: 'Horizontal Image Slider',
   Clock: 'Clock',
   Wifi: 'Wifi',
+  Typewriter: 'Typewriter',
 
   Reactiive: 'Reactiive',
   RandomAnimation: 'Random Animation',

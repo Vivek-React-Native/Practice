@@ -34,6 +34,10 @@ const Screens = ({ navigation }) => {
       title: Strings.Wifi,
       navigate: NavigationRoutes.Wifi,
     },
+    {
+      title: Strings.Typewriter,
+      navigate: NavigationRoutes.Typewriter,
+    },
   ];
 
   const RenderScreens = ({ item, index }) => {

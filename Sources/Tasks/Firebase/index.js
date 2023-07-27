@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { PRContainer, RNText } from '../../Common';
 import { NavigationRoutes, Strings } from '../../Constants';
 import { createStackNavigator } from '@react-navigation/stack';

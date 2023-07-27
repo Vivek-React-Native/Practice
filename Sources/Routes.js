@@ -14,6 +14,7 @@ import {
   VideoPlayers,
   Wifi,
   Firebase,
+  Typewriter,
 } from './Tasks';
 
 const Stack = createStackNavigator();
@@ -43,6 +44,10 @@ const Routes = () => {
           component={VideoPlayers}
         />
         <Stack.Screen name={NavigationRoutes.Wifi} component={Wifi} />
+        <Stack.Screen
+          name={NavigationRoutes.Typewriter}
+          component={Typewriter}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

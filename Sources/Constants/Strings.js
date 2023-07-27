@@ -7,6 +7,7 @@ const Strings = {
   Lion: 'Lion King',
   Swan: 'Swan',
   Wifi: 'Wifi',
+  Typewriter: 'Typewriter',
 
   Reactiive: 'Reactiive',
   RandomAnimation: 'Random Animation',

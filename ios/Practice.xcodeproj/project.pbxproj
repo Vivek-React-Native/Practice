@@ -26,7 +26,7 @@
 		8819501A2A1E0445009E9CAD /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8819500E2A1E0445009E9CAD /* OpenSans-ExtraBold.ttf */; };
 		8819501B2A1E0445009E9CAD /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8819500F2A1E0445009E9CAD /* OpenSans-ExtraBoldItalic.ttf */; };
 		8819501C2A1E0445009E9CAD /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 881950102A1E0445009E9CAD /* OpenSans-LightItalic.ttf */; };
-		88921DF02A41769000E1EA1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88921DEF2A41769000E1EA1E /* GoogleService-Info.plist */; };
+		88E0CA122A7A2F2A002D8178 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88E0CA112A7A2F29002D8178 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +75,8 @@
 		8819500E2A1E0445009E9CAD /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		8819500F2A1E0445009E9CAD /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		881950102A1E0445009E9CAD /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
-		88921DEF2A41769000E1EA1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88CB4CEF2A3982FD00851D3A /* Practice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Practice.entitlements; path = Practice/Practice.entitlements; sourceTree = "<group>"; };
+		88E0CA112A7A2F29002D8178 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Practice-PracticeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice-PracticeTests.release.xcconfig"; path = "Target Support Files/Pods-Practice-PracticeTests/Pods-Practice-PracticeTests.release.xcconfig"; sourceTree = "<group>"; };
 		90ADB04853144ABBBA53373F /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBold.ttf"; path = "../Sources/Assets/Fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		A1D925FFA0BA4D9894474343 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../Sources/Assets/Fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		13B07FAE1A68108700A75B9A /* Practice */ = {
 			isa = PBXGroup;
 			children = (
-				88921DEF2A41769000E1EA1E /* GoogleService-Info.plist */,
+				88E0CA112A7A2F29002D8178 /* GoogleService-Info.plist */,
 				88CB4CEF2A3982FD00851D3A /* Practice.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -326,7 +326,7 @@
 			files = (
 				881950142A1E0445009E9CAD /* OpenSans-BoldItalic.ttf in Resources */,
 				881950112A1E0445009E9CAD /* OpenSans-SemiBoldItalic.ttf in Resources */,
-				88921DF02A41769000E1EA1E /* GoogleService-Info.plist in Resources */,
+				88E0CA122A7A2F2A002D8178 /* GoogleService-Info.plist in Resources */,
 				8819501C2A1E0445009E9CAD /* OpenSans-LightItalic.ttf in Resources */,
 				881950192A1E0445009E9CAD /* OpenSans-SemiBold.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
@@ -686,6 +686,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -706,11 +707,16 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
@@ -753,6 +759,10 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION,
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -770,11 +780,16 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;

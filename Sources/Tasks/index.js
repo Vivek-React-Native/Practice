@@ -7,3 +7,4 @@ export { default as VideoPlayers } from './VideoPlayers';
 export { default as Wifi } from './Wifi';
 export { default as Firebase } from './Firebase';
 export { default as Typewriter } from './Typewriter';
+export { default as InstagramLogin } from './Instagram';

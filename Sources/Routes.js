@@ -15,6 +15,7 @@ import {
   Wifi,
   Firebase,
   Typewriter,
+  InstagramLogin,
 } from './Tasks';
 
 const Stack = createStackNavigator();
@@ -47,6 +48,10 @@ const Routes = () => {
         <Stack.Screen
           name={NavigationRoutes.Typewriter}
           component={Typewriter}
+        />
+        <Stack.Screen
+          name={NavigationRoutes.InstagramLogin}
+          component={InstagramLogin}
         />
       </Stack.Navigator>
     </NavigationContainer>

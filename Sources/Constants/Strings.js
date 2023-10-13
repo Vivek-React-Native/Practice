@@ -8,6 +8,7 @@ const Strings = {
   Swan: 'Swan',
   Wifi: 'Wifi',
   Typewriter: 'Typewriter',
+  InstagramLogin: 'Instagram Login',
 
   Reactiive: 'Reactiive',
   RandomAnimation: 'Random Animation',
@@ -26,6 +27,7 @@ const Strings = {
 
   Firebase: 'Firebase',
   FirebaseAnalytics: 'Firebase Analytics',
+  FirebaseFirestore: 'Firebase Firestore',
 };
 
 export default Strings;

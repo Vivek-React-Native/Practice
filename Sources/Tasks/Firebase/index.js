@@ -1,16 +1,24 @@
 import React from 'react';
-import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { PRContainer, RNText } from '../../Common';
 import { NavigationRoutes, Strings } from '../../Constants';
-import { createStackNavigator } from '@react-navigation/stack';
+import {
+  TransitionPresets,
+  createStackNavigator,
+} from '@react-navigation/stack';
 import { Colors, hp, wp } from '../../Theme';
+import Firestore from './Firestore';
 
 const Stack = createStackNavigator();
 
 const Firebase = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen name={'Firebase Videos'} component={InnerScreens} />
+      <Stack.Screen
+        name={NavigationRoutes.FirebaseFirestore}
+        component={Firestore}
+      />
     </Stack.Navigator>
   );
 };
@@ -53,6 +61,17 @@ const styles = StyleSheet.create({
   },
 });
 
-const DATA = [];
+const screenOptions = {
+  headerShown: false,
+  headerTitleAlign: 'center',
+  ...TransitionPresets.SlideFromRightIOS,
+};
+
+const DATA = [
+  {
+    title: Strings.FirebaseFirestore,
+    navigate: NavigationRoutes.FirebaseFirestore,
+  },
+];
 
 export default Firebase;

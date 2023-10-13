@@ -38,6 +38,10 @@ const Screens = ({ navigation }) => {
       title: Strings.Typewriter,
       navigate: NavigationRoutes.Typewriter,
     },
+    {
+      title: Strings.InstagramLogin,
+      navigate: NavigationRoutes.InstagramLogin,
+    },
   ];
 
   const RenderScreens = ({ item, index }) => {

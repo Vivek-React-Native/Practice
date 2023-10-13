@@ -4,6 +4,7 @@ const NavigationRoutes = {
   Clock: 'Clock',
   Wifi: 'Wifi',
   Typewriter: 'Typewriter',
+  InstagramLogin: 'Instagram Login',
 
   Reactiive: 'Reactiive',
   RandomAnimation: 'Random Animation',
@@ -22,6 +23,7 @@ const NavigationRoutes = {
 
   Firebase: 'Firebase',
   FirebaseAnalytics: 'Firebase Analytics',
+  FirebaseFirestore: 'Firebase Firestore',
 };
 
 export default NavigationRoutes;
